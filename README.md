@@ -52,9 +52,11 @@ Built with **MERN + Google Gemini**, CourseSensei AI transforms any topic into a
 
 ## 🚀 Setup & Run
 
-Backend Setup
+### 🛠️ Backend Setup
+```bash
 cd backend
 npm install
+
 
 Create .env file:
 MONGO_URI=your_mongodb_connection_string
@@ -76,6 +78,7 @@ npm run dev
 3. Review & refine chapters if needed
 4. AI expands chapters with detailed explanations + code examples + videos
 5. Learn and practice instantly using the built-in code compiler
+
 
 
 
