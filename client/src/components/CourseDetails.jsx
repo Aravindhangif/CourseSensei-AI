@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+const API = import.meta.env.VITE_API_URL;
+
 const CourseDetails = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState(null);
@@ -43,7 +45,7 @@ const CourseDetails = () => {
     try {
       setGenerating(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/courses/${courseId}/generate-content`, {
+      const response = await fetch(`${API}/api/courses/${courseId}/generate-content`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

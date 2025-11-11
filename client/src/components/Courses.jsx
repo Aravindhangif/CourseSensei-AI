@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API = import.meta.env.VITE_API_URL;
+
 const Courses = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
@@ -11,7 +13,7 @@ const Courses = () => {
     const fetchCourses = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/courses', {
+        const response = await fetch('${API}/api/courses', {
           headers: {
             'Authorization': `Bearer ${token}`
           }

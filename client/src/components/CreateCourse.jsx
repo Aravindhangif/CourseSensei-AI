@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API = import.meta.env.VITE_API_URL;
+
 const CreateCourse = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -18,7 +20,7 @@ const CreateCourse = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/courses/generate', {
+      const response = await fetch('${API}/api/courses/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +43,7 @@ const CreateCourse = () => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/courses/save', {
+      const response = await fetch('${API}/api/courses/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
