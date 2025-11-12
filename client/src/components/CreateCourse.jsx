@@ -43,7 +43,7 @@ const CreateCourse = () => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('${API}/api/courses/save', {
+      const response = await fetch(`${API}/api/courses/save`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
