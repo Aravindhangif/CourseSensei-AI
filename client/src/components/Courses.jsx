@@ -13,7 +13,7 @@ const Courses = () => {
     const fetchCourses = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('${API}/api/courses', {
+        const response = await fetch(`${API}/api/courses`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
